@@ -11,7 +11,7 @@ module Slackbot
       @previous_latest = @latest
       @latest = Time.now.to_i
 
-      history_request = ApiRequest::History.new({latest: @latest})
+      history_request = ApiRequest::History.new({oldest: @previous_latest, latest: @latest})
       history_request.make_request
       if history_request.ok?
         new_messages = history_request.response_body["messages"]
