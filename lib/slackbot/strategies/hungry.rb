@@ -8,7 +8,7 @@ module Slackbot
       def should_post?
         @db.new_content.each do |message|
           search_terms.each do |term|
-            if message.has_key("text") && message["text"].include?(term)
+            if message.has_key?("text") && message["text"].include?(term)
               return true
             end
           end
