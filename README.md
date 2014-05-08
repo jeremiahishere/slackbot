@@ -2,7 +2,7 @@
 
 TODO: Write a gem description
 
-## Installation
+Create chat bots for slack.
 
 Add this line to your application's Gemfile:
 
@@ -18,7 +18,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Get your auth token from https://api.slack.com/.  Put it into slackbot/auth.token.
+Get the channel you want to post to with something like:
+
+    curl https://slack.com/api/groups.list -d "channel=G029RFQA6&token=<my_token>
+
+or 
+
+    curl https://slack.com/api/channels.list -d "channel=G029RFQA6&token=<my_token>
+
+Copy the id field into the rake file as a setup method parameter
+
+Add a strategy by making a new file in the strategies directory that implements the should_post? and post methods.  Then add it to the list of strategies in the Slackbot setup method.
+
 
 ## Contributing
 
