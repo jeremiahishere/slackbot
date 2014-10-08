@@ -9,6 +9,7 @@ require "slackbot/api_requests/history"
 require "slackbot/strategies/base"
 require "slackbot/strategies/hungry"
 require "slackbot/strategies/cleverbot"
+require "slackbot/strategies/linter"
 
 module Slackbot
 
