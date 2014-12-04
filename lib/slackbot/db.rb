@@ -8,6 +8,8 @@ module Slackbot
     end
 
     def update
+      @posts = [] if @posts.size > 100
+
       @previous_latest = @latest
       @latest = Time.now.to_i
 

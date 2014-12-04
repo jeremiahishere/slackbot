@@ -17,7 +17,7 @@ module Slackbot
       end
 
       def post
-        chat_request = ApiRequest::Base.new("chat.postMessage", {username: "I already ate lunch", text: "Earlier today"})
+        chat_request = ApiRequest::Base.new("chat.postMessage", {username: "Ghost of Jeremiah", text: "I already ate lunch"})
         chat_request.make_request
       end
     end
