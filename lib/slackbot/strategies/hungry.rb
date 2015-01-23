@@ -2,13 +2,13 @@ module Slackbot
   module Strategy
     class Hungry < ::Slackbot::Strategy::Base
       def search_terms
-        ["food", "lunch", "hungry", "eat", "ate", "eaten"]
+        ["food", "lunch", "hungry", "eat", "ate", "eaten", "pizza", "tacos", "subs", "breakfast"]
       end
 
       def should_post?
         @db.new_content.each do |message|
           search_terms.each do |term|
-            if message.has_key?("text") && message["text"].include?(term)
+            if message.has_key?("text") && message["text"].downcase.include?(term)
               return true
             end
           end
